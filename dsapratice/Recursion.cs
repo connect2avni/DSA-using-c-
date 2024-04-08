@@ -10,13 +10,13 @@ namespace dsapratice
     {
         static void Main(string[] args)
         {
-            Recursion r= new Recursion();
-           *//* r.calculateiterative(4);
-            Console.ReadLine();*/
-
-            /*r.calculateiterative(5);
+            Recursion r = new Recursion();
+            *//*r.calculateiterative(4);
             Console.ReadLine();
-*//*
+
+            r.calculateiterative(5);
+            Console.ReadLine();*//*
+
             r.calculate(3);
             Console.ReadLine();
 
@@ -24,7 +24,7 @@ namespace dsapratice
         }
     }
 
-    
+
     public class Recursion
     {
 
@@ -38,9 +38,9 @@ namespace dsapratice
                 calculate(n - 1);
             }
         }
-        public void calculateiterative(int n)
+        *//*public void calculateiterative(int n)
         {
-            while(n>0)
+            while (n > 0)
             {
                 int k = n * n;
                 Console.WriteLine(k);
@@ -53,9 +53,9 @@ namespace dsapratice
             {
                 int k = n * n;
                 Console.WriteLine(k);
-                calculateRecursive(n-1);
+                calculateRecursive(n - 1);
             }
-        }
+        }*//*
     }
 }
 */
