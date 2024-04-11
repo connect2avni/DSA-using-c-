@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -109,7 +109,99 @@ namespace dsapratice
 
             }
         }
-        
+        //removing last element of linked list
+        public int removeLast()
+        {
+            if( isEmpty())
+            {
+                Console.WriteLine("List is empty");
+                return -1;
+
+            }
+            Node p = head;
+            int i = 1;
+            while(i< size-1)
+            {
+                p = p.next;
+                i = i + 1;
+            }
+            tail = p;
+            p=p.next;
+            int e = p.element;
+            tail.next = null;
+            size = size - 1;
+            return e;
+
+        }
+
+        //removing element anywhere in linked list
+
+        public int removeAny(int position)
+        {
+            if(position <=0|| position >=size -1)
+            {
+                Console.WriteLine("Invalid Position");
+                return -1;
+            }
+            Node p = head;
+            int i = 1;
+            while( i<position - 1)
+            {
+                p = p.next;
+                i = i+1;
+
+
+            }
+            int e = p.next.element;
+            p.next = p.next.next;
+            size= size - 1;
+            return e;
+        }
+
+        //searching an element in linked list
+        public int search(int key)
+        {
+            Node p = head;
+            int index = 0;
+            while( p != null )
+            {
+                if (p.element == key)
+                    return index;
+                p= p.next;
+                index= index + 1;   
+            }
+            return -1;
+        }
+
+        //inserting elements in sorted order in linked list
+        public void insertsorted(int e)
+        {
+            Node newest = new Node(e, null);
+            if(isEmpty())
+                head= newest;
+            else
+            {
+                Node p = head;
+                Node q = head;
+                while(p != null && p.element< e)
+                {
+                    q = p;
+                    p = p.next;
+
+                }
+                if(p==head)
+                {
+                    newest.next = head;
+                    head = newest;
+                }
+                else
+                {
+                    newest.next = q.next;
+                    q.next = newest;
+                }
+            }
+            size = size + 1;
+        }
         public void display()
         {
             Node p = head;
@@ -124,9 +216,15 @@ namespace dsapratice
         static void Main(string[] args)
         {
             LinkedList l = new LinkedList();
-            l.addLast(7);
-            l.addLast(4);
-            l.addLast(12);
+            *//*  l.addLast(7);
+              l.addLast(4);
+              l.addLast(12);*//*
+
+            l.insertsorted(7);
+            l.insertsorted(4);
+            l.insertsorted(12);
+            l.insertsorted(8);
+            l.insertsorted(3);
             l.display();
             Console.ReadKey();
             l.addFirst(15);
@@ -134,11 +232,30 @@ namespace dsapratice
             l.addAny(20, 3);
             //detete
 
-            int element= l.removeFirst();
+            *//*int element= l.removeFirst();
             Console.WriteLine("Removed Element: "+ element);
             l.display();
             Console.WriteLine("size:" +l.length());
+            Console.ReadKey();*/
+
+            /*int element = l.removeLast();
+            Console.WriteLine("Removed Element:"+ element);
+            l.display();
+            Console.WriteLine("Size:" + l.length());
+            Console.ReadKey();*/
+
+            /*int element=l.removeAny(3);
+            Console.WriteLine("Removed Element: " + element);
+            Console.WriteLine("Size:" + l.length());
+            l.display() ;
+            Console.ReadKey();*//*
+
+            int position = l.search(12);
+            Console.WriteLine("Result:" +position );
             Console.ReadKey();
+
+
         }
     }
 }
+*/
