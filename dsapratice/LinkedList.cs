@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,50 @@ namespace dsapratice
             }
             size = size + 1;
         }
+        //adding any element at any position of linked list
+        public void addAny(int e, int position)
+        {
+            if(position <= 0 || position >= size)
+            {
+                Console.WriteLine("Invalid Position");
+                return;
+            }
+            Node newest = new Node(e, null);
+            Node p = head;
+            int i = 1;
+            while(i< position-1)
+            {
+                p = p.next;
+                i = i + 1;
+
+            }
+            newest.next = p.next;
+            p.next= newest;
+            size=size+ 1;
+
+
+        }
+        //removing first element from linked list
+        public int removeFirst()
+        {
+            if(isEmpty())
+            {
+                Console.WriteLine("List is Empty");
+                return -1;
+
+            }
+            else
+            {
+                int e = head.element;
+                head = head.next;
+                size = size - 1;
+                if (isEmpty())
+                    tail = null;
+                return e;
+
+            }
+        }
+        
         public void display()
         {
             Node p = head;
@@ -86,6 +131,14 @@ namespace dsapratice
             Console.ReadKey();
             l.addFirst(15);
             l.addFirst(25);
+            l.addAny(20, 3);
+            //detete
+
+            int element= l.removeFirst();
+            Console.WriteLine("Removed Element: "+ element);
+            l.display();
+            Console.WriteLine("size:" +l.length());
+            Console.ReadKey();
         }
     }
 }
