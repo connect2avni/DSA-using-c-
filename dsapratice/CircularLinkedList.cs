@@ -116,6 +116,30 @@ namespace dsapratice
             }
             return e;
         }
+
+        //delete element at end of circular linked list
+
+        public int removeLast()
+        {
+            if(isEmpty())
+            {
+                Console.WriteLine("Circular list is empty");
+            return -1;
+            }
+            Node p = head;
+            int i = 1;
+            while(i<length()-1)
+            {
+                p=p.next;
+                i= i + 1;
+            }
+            tail = p;
+            p = p.next;
+            tail.next = p;
+            int e = p.element;
+            size = size - 1;
+            return e;
+        }
         public void display()
         {
             Node p = head;
@@ -140,10 +164,14 @@ namespace dsapratice
             //l.addAny(20, 1);
             //l.addFirst(25);
 
-            int element= l.removeFirst();
+            /*int element= l.removeFirst();
             Console.WriteLine("Removed Element:" +element);
             l.display();
             Console.WriteLine("Size" + l.length());
+            Console.ReadKey();*/
+
+            int element = l.removeLast();
+            Console.WriteLine("Removed Element:"+ element);
             Console.ReadKey();
         }
     }
