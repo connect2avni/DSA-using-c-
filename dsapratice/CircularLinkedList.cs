@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -190,7 +190,7 @@ namespace dsapratice
             //l.addAny(20, 1);
             //l.addFirst(25);
 
-            /*int element= l.removeFirst();
+            *//*int element= l.removeFirst();
             Console.WriteLine("Removed Element:" +element);
             l.display();
             Console.WriteLine("Size" + l.length());
@@ -198,7 +198,7 @@ namespace dsapratice
 
             /* int element = l.removeLast();
                Console.WriteLine("Removed Element:"+ element);
-               Console.ReadKey();*/
+               Console.ReadKey();*//*
 
             int element = l.removeAny(3);
             Console.WriteLine("Removed Element:" + element);
@@ -210,3 +210,4 @@ namespace dsapratice
     }
 
 }
+*/
